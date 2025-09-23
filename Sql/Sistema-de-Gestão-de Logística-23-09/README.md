@@ -21,15 +21,19 @@ O sistema é dividido em módulos modulares, como peças de um quebra-cabeça lo
 
 
 - **Tabelas Principais** (resumidas com emojis para visual flair):
-  - **Clientes** 👥: Armazena dados de clientes, endereços e histórico de pedidos.
-  - **Funcionários/Admin** 👔: Gerencia equipe administrativa e permissões de acesso.
-  - **Entregas** 📦: Registra status de entregas, prazos e rastreamento.
-  - **Veículos** 🚗: Detalhes de frota, manutenção e disponibilidade.
-  - **Ocorrências** ⚠️: Log de incidentes, atrasos ou problemas na rota.
-  - **Frotas** 🚌: Organização de grupos de veículos por região ou tipo.
-  - **Motoristas** 🚙: Perfis de condutores, licenças e horários.
-  - **Pagamentos** 💰: Controle de faturamento, recibos e integrações financeiras.
-  - **Rotas** 🛣️: Planejamento de caminhos otimizados com distâncias e tempos estimados.
+
+
+ | Tabela | Emoji | Descrição Rápida | Relações Chave |
+|--------|-------|------------------|---------------|
+| **Clientes** | 👥 | Dados pessoais, endereços e histórico de pedidos – o "quem" da logística. | Liga a Entregas e Pagamentos. |
+| **Funcionários/Admin** | 👔 | Equipe ADM com permissões e acessos – os guardiões do sistema. | Integra com Ocorrências e Rotas. |
+| **Entregas** | 📦 | Status, prazos e rastreamento – o "o quê" e "quando" das missões. | Conecta a Rotas, Motoristas e Clientes. |
+| **Veículos** | 🚗 | Frota com manutenção e disponibilidade – os cavalos de ferro! | Parte de Frotas e liga a Entregas. |
+| **Ocorrências** | ⚠️ | Logs de incidentes e atrasos – o "detetive" de problemas. | Reporta de Entregas e Motoristas. |
+| **Frotas** | 🚌 | Grupos de veículos por região – a organização em escala. | Agrupa Veículos e Rotas. |
+| **Motoristas** | 🚙 | Perfis, licenças e horários – os pilotos heróicos. | Atribui a Entregas e Veículos. |
+| **Pagamentos** | 💰 | Faturamento e recibos – o fluxo de riqueza. | Vincula a Clientes e Entregas. |
+| **Rotas** | 🛣️ | Caminhos otimizados com distâncias – o cérebro estratégico. | Guia Entregas e Frotas. |
 
 ## 🔧 **Como Instalar e Usar**
 Siga estes passos para "ligar o motor" do seu sistema logístico! ⛽
