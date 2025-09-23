@@ -13,9 +13,12 @@ Bem-vindo ao **Sistema de Logística Dinâmico**! Este banco de dados é o cora�
 ## 🏗️ **Estrutura do Banco de Dados**
 O sistema é dividido em módulos modulares, como peças de um quebra-cabeça logístico. Cada arquivo SQL representa um componente chave. Aqui vai um **mapa visual** das tabelas principais:
 
-```
+<div align="center">
+  <img src="img/Fluxograma.png" alt="Banner mostrando um sistema de gestão de CNH com interface" />
+  <br>
 
-```
+</div>
+
 
 - **Tabelas Principais** (resumidas com emojis para visual flair):
   - **Clientes** 👥: Armazena dados de clientes, endereços e histórico de pedidos.
