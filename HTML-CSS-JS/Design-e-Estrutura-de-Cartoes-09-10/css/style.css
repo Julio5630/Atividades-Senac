@@ -1,0 +1,149 @@
+/*
+ * --------------------------------
+ * RESET e Estilos Base para UX
+ * --------------------------------
+*/
+body {
+    /* Cor de fundo suave para o corpo, bom contraste */
+    background-color: #f4f4f9; 
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6; /* Boa leitura */
+}
+
+.cabecalho {
+    background-color: #333;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+/*
+ * --------------------------------
+ * Estilo do Container e Cards (Divs Principais)
+ * --------------------------------
+*/
+.card-container {
+    /* Usando Flexbox para alinhar os cards, excelente para UX */
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap; /* Quebra de linha em telas pequenas (Responsividade) */
+    padding: 30px 10px;
+    max-width: 1200px;
+    margin: 0 auto; /* Centraliza o container */
+}
+
+.card {
+    /* Estilo base de todas as divs "card" */
+    width: 300px;
+    margin: 15px;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave para profundidade */
+    transition: transform 0.3s; /* Animação suave no hover */
+}
+
+.card:hover {
+    transform: translateY(-5px); /* Efeito ao passar o mouse (UX agradável) */
+}
+
+/* * CORES DIFERENTES PARA AS DIVS PRINCIPAIS (Card)
+ * Bom contraste entre fundo e texto
+*/
+.card-primario {
+    background-color: #e6f7ff; /* Azul claro */
+    border-left: 5px solid #007bff;
+}
+
+.card-secundario {
+    background-color: #fff0e6; /* Laranja claro */
+    border-left: 5px solid #ff6347;
+}
+
+.card-terciario {
+    background-color: #e6ffe6; /* Verde claro */
+    border-left: 5px solid #28a745;
+}
+
+.card h2 {
+    color: #333;
+    border-bottom: 2px solid rgba(0, 0, 0, 0.1);
+    padding-bottom: 10px;
+}
+
+/*
+ * --------------------------------
+ * Estilo dos Elementos Internos (span.destaque)
+ * --------------------------------
+*/
+.destaque {
+    /* Estilo base para todos os elementos de destaque */
+    display: inline-block;
+    padding: 5px 10px;
+    margin: 5px 5px 5px 0;
+    border-radius: 4px;
+    font-size: 0.9em;
+    font-weight: bold;
+    color: white; /* Cor do texto em branco para alto contraste */
+}
+
+/* CORES DIFERENTES PARA OS SPANS INTERNOS */
+.destaque-verde {
+    background-color: #28a745;
+}
+
+.destaque-amarelo {
+    background-color: #ffc107;
+    color: #333; /* Muda a cor do texto para o preto para garantir o contraste */
+}
+
+.destaque-laranja {
+    background-color: #fd7e14;
+}
+
+.destaque-azul {
+    background-color: #17a2b8;
+}
+
+.destaque-roxo {
+    background-color: #6f42c1;
+}
+
+.destaque-vermelho {
+    background-color: #dc3545;
+}
+
+/*
+ * --------------------------------
+ * Rodapé
+ * --------------------------------
+*/
+.rodape {
+    background-color: #333;
+    color: #999;
+    text-align: center;
+    padding: 15px;
+    margin-top: 20px;
+}
+
+/*
+ * --------------------------------
+ * Responsividade (Boa UX em telas menores)
+ * --------------------------------
+*/
+@media (max-width: 1024px) {
+    .card-container {
+        justify-content: center; /* Centraliza na vertical para telas médias */
+    }
+}
+
+@media (max-width: 768px) {
+    .card {
+        width: 100%; /* Faz os cards ocuparem 100% da largura em celulares */
+        margin: 10px 0;
+    }
+    .cabecalho h1 {
+        font-size: 1.5em;
+    }
+}
