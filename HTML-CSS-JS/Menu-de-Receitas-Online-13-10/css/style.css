@@ -1,0 +1,149 @@
+/*
+ * --------------------------------
+ * RESET e Estilos Base
+ * --------------------------------
+*/
+body {
+    background-color: #f8f8f8; /* Fundo muito claro */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+}
+
+.cabecalho {
+    background-color: #5d4037; /* Marrom escuro (café/chocolate) */
+    color: white;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.cabecalho h1 {
+    margin-top: 0;
+    font-size: 2.5em;
+}
+
+/*
+ * --------------------------------
+ * Estilo do Container e Cards (Receitas)
+ * --------------------------------
+*/
+.card-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap; 
+    padding: 30px 10px;
+    max-width: 1200px;
+    margin: 0 auto; 
+}
+
+.card {
+    /* Estilo base de todas as receitas */
+    width: 300px;
+    margin: 20px;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* Sombra um pouco mais proeminente */
+    transition: all 0.3s ease-in-out; 
+    text-align: center;
+}
+
+.card:hover {
+    transform: translateY(-8px) scale(1.02); /* Efeito de elevação agradável */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* CORES TEMÁTICAS PARA AS RECEITAS */
+.card-primario {
+    background-color: #fffde7; /* Amarelo muito claro (massa/baunilha) */
+}
+
+.card-secundario {
+    background-color: #e6f7ff; /* Azul/verde claro (água/saudável) */
+}
+
+.card-terciario {
+    background-color: #fbe6e6; /* Rosa claro (carne/torta) */
+}
+
+.card h2 {
+    color: #4e342e; /* Marrom para títulos */
+    margin-top: 0;
+    margin-bottom: 15px;
+}
+
+.card p {
+    color: #555;
+    font-size: 0.95em;
+    min-height: 50px; /* Para manter os cards alinhados, mesmo com pouco texto */
+}
+
+/*
+ * --------------------------------
+ * Estilo dos Elementos Internos (Tags e Botão)
+ * --------------------------------
+*/
+.tags-receita {
+    margin: 15px 0;
+}
+
+.destaque {
+    /* Estilo base para Tempo e Dificuldade */
+    display: inline-block;
+    padding: 6px 12px;
+    margin: 5px 3px;
+    border-radius: 20px; /* Borda arredondada (pill shape) */
+    font-size: 0.8em;
+    font-weight: 600;
+    color: white;
+}
+
+/* CORES VIBRANTES PARA OS DESTAQUES */
+.destaque-tempo {
+    background-color: #8d6e63; /* Marrom claro */
+}
+
+.destaque-dificuldade {
+    background-color: #ef6c00; /* Laranja forte */
+}
+
+.btn-ver-receita {
+    display: block;
+    width: 80%;
+    margin: 20px auto 0;
+    padding: 10px;
+    background-color: #ff5722; /* Laranja de destaque (ação) */
+    color: white;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+    transition: background-color 0.2s;
+}
+
+.btn-ver-receita:hover {
+    background-color: #e64a19; /* Laranja mais escuro no hover */
+}
+
+/*
+ * --------------------------------
+ * Rodapé e Responsividade
+ * --------------------------------
+*/
+.rodape {
+    background-color: #333;
+    color: #ccc;
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px;
+}
+
+@media (max-width: 768px) {
+    .card {
+        width: 90%; 
+        margin: 15px auto;
+    }
+    .cabecalho h1 {
+        font-size: 2em;
+    }
+}
