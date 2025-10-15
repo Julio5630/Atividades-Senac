@@ -11,6 +11,15 @@ body {
     line-height: 1.6;
 }
 
+.card-imagem {
+    width: 100%; /* Ocupa toda a largura do card */
+    height: 50%; /* Ocupa toda a altura do card */
+    object-fit: cover; /* Mantém a proporção, cortando as áreas em excesso */
+    display: block; /* Garante que a imagem se comporte como bloco */
+    border-radius: 16px;
+
+}
+
 .cabecalho {
     background-color: #7E36A8; /* Marrom escuro (café/chocolate) */
     color: white;
@@ -33,14 +42,14 @@ body {
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap; 
-    padding: 30px 10px;
+    padding: 30px 1px;
     max-width: 1200px;
     margin: 0 auto; 
 }
 
 .card {
     /* Estilo base de todas as receitas */
-    width: 300px;
+    width: 450px;
     margin: 20px;
     padding: 25px;
     border-radius: 25px;
