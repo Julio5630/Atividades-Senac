@@ -12,15 +12,16 @@ body {
 }
 
 .cabecalho {
-    background-color: #5d4037; /* Marrom escuro (café/chocolate) */
+    background-color: #7E36A8; /* Marrom escuro (café/chocolate) */
     color: white;
-    padding: 40px 20px;
+    padding: 10px 10px;
     text-align: center;
 }
 
 .cabecalho h1 {
     margin-top: 0;
-    font-size: 2.5em;
+    font-size: 1.9 em;
+    text-align: left;
 }
 
 /*
@@ -42,7 +43,7 @@ body {
     width: 300px;
     margin: 20px;
     padding: 25px;
-    border-radius: 12px;
+    border-radius: 25px;
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* Sombra um pouco mais proeminente */
     transition: all 0.3s ease-in-out; 
     text-align: center;
