@@ -3,25 +3,52 @@
  * RESET e Estilos Base
  * --------------------------------
 */
+.barra-navegacao {
+    background-color: #00b4d800; /* Mesma cor do header para integração */
+    padding: 10px;
+    text-align: center;
+}
+.barra-navegacao ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: right;
+}
+.barra-navegacao ul li {
+    margin: 0 15px;
+}
+.barra-navegacao ul li a {
+    color: #1C1C2B; /* Texto escuro para contraste */
+    text-decoration: none;
+    font-weight: bold;
+    padding: 10px 10px;
+    transition: color 0.3s;
+}
+.barra-navegacao ul li a:hover {
+    color: #8c00ff; /* Amarelo dourado no hover */
+}
+
 body {
-    background-color: #1C1C2B; /* Fundo escuro para imersão */
-    color: #F0F0F5; /* Texto neutro para legibilidade */
+    background-color: #1C1C2B;
+    /* Fundo escuro para imersão */
+    color: #F0F0F5;
+    /* Texto neutro para legibilidade */
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0;
     padding: 0;
     line-height: 1.6;
-    /* Gradiente Radial Escuro, Profundo e Moderno */
-background: radial-gradient(
-    110% 110% at 50% 50%, /* Ajustei o tamanho e a posição para centralizar mais o efeito */
-    /* Ponto focal (Neon/Luminoso) */
-    rgba(0, 255, 255, 0.5) 0%, /* Ciano Brilhante (Mais transparente para ser sutil) */
-    /* Transição para tons profundos */
-    rgba(30, 0, 45, 1) 20%, /* Roxo Escuro */
-    rgba(10, 0, 30, 1) 40%, /* Azul-Roxo Ultra Escuro */
-    /* Tons de fundo (Base escura) */
-    rgba(0, 0, 0, 1) 70%, /* Preto Puro */
-    rgba(5, 5, 20, 1) 100% /* Azul Marinho Profundo (Para dar textura) */
-);
+    /* Gradiente Linear com Toque Metálico e Frio */
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(125% 125% at -2% 101%,
+            rgba(245, 87, 2, 1) 10.5%,
+            rgba(245, 120, 2, 1) 16%,
+            rgba(245, 140, 2, 1) 17.5%,
+            rgba(245, 170, 100, 1) 25%,
+            rgba(238, 174, 202, 1) 40%,
+            rgba(202, 179, 214, 1) 65%,
+            rgba(148, 201, 233, 1) 100%);
 }
 
 .imagem-card {
@@ -33,16 +60,26 @@ background: radial-gradient(
 }
 
 .cabecalho {
-    background-color: #00000067; /* Azul neon para destaque */
-    color: #ffffff; /* Texto escuro para contraste */
-    padding: 10px 10px;
+    background-color: #00000067;
+    /* Azul neon para destaque */
+    color: #ffffff;
+    /* Texto escuro para contraste */
+    padding: 11px 10px;
     text-align: center;
+    width: 100%;
+    height: 100%;
+    justify-content: space-between;
+    align-items: center;
+    display: flex;
+
 }
+
 
 .cabecalho h1 {
     margin-top: 0;
     font-size: 1.9em;
     text-align: left;
+    ;
 }
 
 /*
@@ -57,7 +94,7 @@ background: radial-gradient(
     padding: 30px 1px;
     max-width: 1200px;
     margin: 0 auto;
-    
+
 }
 
 .card-jogo {
@@ -65,15 +102,16 @@ background: radial-gradient(
     margin: 20px;
     padding: 25px;
     border-radius: 25px;
-    background-color: #F0F0F5; /* Fundo claro neutro */
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.25);
+    background-color: #F0F0F5;
+    /* Fundo claro neutro */
+    box-shadow: 0 6px 12px rgb(8, 19, 56);
     transition: all 0.3s ease-in-out;
     text-align: center;
 
 
 }
 
-.descricao{
+.descricao {
     font-family: 'Times New Roman', Times, serif;
 }
 
@@ -83,27 +121,23 @@ background: radial-gradient(
 }
 
 .card-jogo-primario {
-    background-color: #29262c; /* Amarelo dourado */
-}
-
-.card-jogo-secundario {
-    background-color: #00B4D8; /* Azul neon */
-}
-
-.card-jogo-terciario {
-    background-color: #FF6347; /* Laranja-avermelhado */
+    background-color: #8306ff00;
+    /* Amarelo dourado */
 }
 
 .card-jogo h2 {
-    color: #FF6347; /* Títulos em laranja-avermelhado */
+    color: #FF6347;
+    /* Títulos em laranja-avermelhado */
     margin-top: 0;
     margin-bottom: 15px;
 }
 
 .card-jogo p {
-    color: #F0F0F5; /* Ajuste para texto nos cards */
-    font-size: 0.95em;
+    color: #000000;
+    /* Ajuste para texto nos cards */
+    font-size: 0.9 em;
     min-height: 50px;
+    ;
 }
 
 /*
@@ -123,15 +157,18 @@ background: radial-gradient(
     font-size: 0.8em;
     font-weight: 600;
     color: white;
-    background-color: #00B4D8; /* Azul neon como base */
+    background-color: #00B4D8;
+    /* Azul neon como base */
 }
 
 .duração-card {
-    background-color: #1909ff; /* Amarelo dourado para duração */
+    background-color: #ff09de50;
+    /* Amarelo dourado para duração */
 }
 
 .avaliação-card {
-    background-color: #FF6347; /* Laranja-avermelhado para avaliações */
+    background-color: #ffb1099a;
+    /* Laranja-avermelhado para avaliações */
 }
 
 .botao-ver-review {
@@ -139,17 +176,28 @@ background: radial-gradient(
     width: 80%;
     margin: 20px auto 0;
     padding: 10px;
-    background-color: #FF6347; /* Laranja-avermelhado para botões */
+    /* Laranja-avermelhado para botões */
     color: white;
     text-decoration: none;
     border-radius: 6px;
     font-weight: bold;
     letter-spacing: 0.5px;
     transition: background-color 0.2s;
+    border: none;
+    background-color: rgba(151, 95, 255, 0.315);
+    color: white;
+    box-shadow: 0px 10px 10px rgba(222, 213, 240, 0.644) inset,
+        0px 5px 10px rgba(5, 5, 5, 0.212),
+        0px -10px 10px rgb(124, 54, 255) inset;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .botao-ver-review:hover {
-    background-color: #E74C3C; /* Variação mais escura */
+    background-color: #0400ff;
+    /* Variação mais escura */
 }
 
 /*
@@ -158,11 +206,20 @@ background: radial-gradient(
  * --------------------------------
 */
 .rodape {
-    background-color: #1C1C2B; /* Fundo escuro */
-    color: #F0F0F5; /* Texto neutro */
+    background-color: #1C1C2B;
+    /* Fundo escuro */
+    color: #F0F0F5;
+    /* Texto neutro */
     text-align: center;
     padding: 20px;
     margin-top: 40px;
+}
+
+.Logo {
+    width: 100px;
+    height: auto;
+    display: block;
+    margin-right: 10px; /* Espaço entre logo e o resto */
 }
 
 @media (max-width: 768px) {
@@ -170,6 +227,7 @@ background: radial-gradient(
         width: 90%;
         margin: 15px auto;
     }
+
     .cabecalho h1 {
         font-size: 2em;
     }
