@@ -1,0 +1,371 @@
+/*
+ * ----------------------------------------------------
+ * ESTILOS GERAIS E RESET
+ * ----------------------------------------------------
+ */
+ * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #0d0d0d;
+    color: #e0e0e0;
+    line-height: 1.6;
+}
+
+a {
+    color: #ffffff;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+a:hover {
+    color: #4CAF50;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    width: 100%;
+}
+
+/*
+ * ----------------------------------------------------
+ * HERO SECTION (Fundo de Imagem Principal)
+ * ----------------------------------------------------
+ */
+.hero-section {
+    background-image: url('https://media-www.sqspcdn.com/images/pages/flagship/blogs/hero/hero-background-tablet-1000w.webp');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+}
+
+.hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+}
+
+.navbar, .hero-content {
+    position: relative;
+    z-index: 2;
+}
+
+/*
+ * ----------------------------------------------------
+ * NAV BAR (Barra de Navegação)
+ * ----------------------------------------------------
+ */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 5%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    background-color: rgba(13, 13, 13, 0.8);
+    backdrop-filter: blur(5px);
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #ffffff;
+    letter-spacing: 1px;
+}
+
+.nav-container {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.nav-link {
+    padding: 8px 16px;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+
+.nav-link:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+/*
+ * ----------------------------------------------------
+ * HERO CONTENT (Texto Central)
+ * ----------------------------------------------------
+ */
+.hero-content {
+    text-align: center;
+    padding: 150px 20px 100px;
+    color: #ffffff;
+    margin-top: 60px;
+}
+
+.hero-content h2 {
+    font-size: 1.5rem;
+    font-weight: 400;
+    margin-bottom: 15px;
+}
+
+.hero-content h1 {
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    font-weight: 700;
+    margin-bottom: 30px;
+    line-height: 1.2;
+}
+
+.main-cta {
+    display: inline-block;
+    background-color: #ffffff;
+    color: #0d0d0d;
+    padding: 15px 35px;
+    font-weight: 700;
+    border-radius: 5px;
+    letter-spacing: 1px;
+    transition: background-color 0.3s;
+}
+
+.main-cta:hover {
+    background-color: #cccccc;
+}
+
+/*
+ * ----------------------------------------------------
+ * SEÇÃO DE CONTEÚDO (Foco na vida saudável)
+ * ----------------------------------------------------
+ */
+.content-section {
+    padding: 80px 0;
+    background-color: #1a1a1a;
+    text-align: center;
+}
+
+.content-section h2 {
+    color: #4CAF50;
+    margin-bottom: 40px;
+    font-size: 2rem;
+}
+
+footer {
+    text-align: center;
+    padding: 20px 0;
+    background-color: #000000;
+    border-top: 1px solid #1a1a1a;
+    font-size: 0.8rem;
+    color: #888888;
+}
+
+.imagem-card {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    display: block;
+    border-radius: 16px;
+    margin-bottom: 15px;
+}
+
+.botao-ver-review {
+    display: block;
+    width: 80%;
+    margin: 20px auto 0;
+    padding: 12px;
+    color: white;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+    transition: background-color 0.2s;
+    border: none;
+    background-color: rgba(4, 3, 5, 0.315);
+    box-shadow: 0px 10px 10px rgba(52, 49, 58, 0.644) inset,
+        0px 5px 10px rgba(5, 5, 5, 0.212),
+        0px -10px 10px rgb(0, 0, 0) inset;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.botao-ver-review:hover {
+    background-color: #1c1c1f;
+}
+
+.container-card {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 30px 0;
+    max-width: 1200px;
+    margin: 0 auto;
+    gap: 20px;
+}
+
+.card-jogo {
+    width: 100%;
+    max-width: 400px;
+    margin: 10px;
+    padding: 25px;
+    border-radius: 25px;
+    background-color: #03030320;
+    box-shadow: 0 6px 12px rgb(1, 1, 1);
+    transition: all 0.3s ease-in-out;
+    text-align: center;
+}
+
+.card-jogo h2 {
+    margin-bottom: 15px;
+    font-size: 1.5rem;
+}
+
+.card-jogo p {
+    margin-bottom: 15px;
+}
+
+/*
+ * ----------------------------------------------------
+ * MEDIA QUERIES PARA RESPONSIVIDADE
+ * ----------------------------------------------------
+ */
+
+/* Tablets */
+@media (max-width: 1024px) {
+    .navbar {
+        padding: 15px 5%;
+    }
+    
+    .hero-content {
+        padding: 120px 20px 80px;
+    }
+    
+    .container-card {
+        padding: 20px 0;
+    }
+    
+    .card-jogo {
+        max-width: 350px;
+    }
+}
+
+/* Tablets pequenos e smartphones grandes */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        padding: 15px 5%;
+        gap: 15px;
+    }
+    
+    .nav-container {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+    }
+    
+    .hero-content {
+        padding: 140px 15px 60px;
+    }
+    
+    .hero-content h1 {
+        font-size: 2.5rem;
+    }
+    
+    .content-section {
+        padding: 60px 0;
+    }
+    
+    .container-card {
+        padding: 15px 0;
+    }
+    
+    .card-jogo {
+        max-width: 100%;
+        margin: 10px 0;
+    }
+}
+
+/* Smartphones */
+@media (max-width: 480px) {
+    .navbar {
+        padding: 10px 5%;
+    }
+    
+    .logo {
+        font-size: 1.3rem;
+    }
+    
+    .nav-container {
+        gap: 8px;
+    }
+    
+    .nav-link {
+        padding: 6px 12px;
+        font-size: 0.9rem;
+    }
+    
+    .hero-content {
+        padding: 120px 10px 40px;
+    }
+    
+    .hero-content h2 {
+        font-size: 1.2rem;
+    }
+    
+    .hero-content h1 {
+        font-size: 2rem;
+    }
+    
+    .content-section h2 {
+        font-size: 1.5rem;
+    }
+    
+    .container {
+        padding: 0 15px;
+    }
+    
+    .card-jogo {
+        padding: 20px;
+    }
+    
+    .imagem-card {
+        height: 180px;
+    }
+    
+    .botao-ver-review {
+        width: 90%;
+        padding: 10px;
+    }
+}
+
+/* Smartphones muito pequenos */
+@media (max-width: 360px) {
+    .nav-container {
+        flex-direction: column;
+        gap: 5px;
+    }
+    
+    .hero-content h1 {
+        font-size: 1.8rem;
+    }
+    
+    .card-jogo {
+        padding: 15px;
+    }
+}
