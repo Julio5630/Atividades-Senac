@@ -4,88 +4,106 @@
  * --------------------------------
 */
 body {
-    background-color: #f8f8f8; /* Fundo muito claro */
+    background-color: #1C1C2B; /* Fundo escuro para imersão */
+    color: #F0F0F5; /* Texto neutro para legibilidade */
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0;
     padding: 0;
     line-height: 1.6;
+    /* Gradiente Radial Escuro, Profundo e Moderno */
+background: radial-gradient(
+    110% 110% at 50% 50%, /* Ajustei o tamanho e a posição para centralizar mais o efeito */
+    /* Ponto focal (Neon/Luminoso) */
+    rgba(0, 255, 255, 0.5) 0%, /* Ciano Brilhante (Mais transparente para ser sutil) */
+    /* Transição para tons profundos */
+    rgba(30, 0, 45, 1) 20%, /* Roxo Escuro */
+    rgba(10, 0, 30, 1) 40%, /* Azul-Roxo Ultra Escuro */
+    /* Tons de fundo (Base escura) */
+    rgba(0, 0, 0, 1) 70%, /* Preto Puro */
+    rgba(5, 5, 20, 1) 100% /* Azul Marinho Profundo (Para dar textura) */
+);
 }
 
-.card-imagem {
-    width: 100%; /* Ocupa toda a largura do card */
-    height: 50%; /* Ocupa toda a altura do card */
-    object-fit: cover; /* Mantém a proporção, cortando as áreas em excesso */
-    display: block; /* Garante que a imagem se comporte como bloco */
+.imagem-card {
+    width: 100%;
+    height: 50%;
+    object-fit: cover;
+    display: block;
     border-radius: 16px;
-
 }
 
 .cabecalho {
-    background-color: #7E36A8; /* Marrom escuro (café/chocolate) */
-    color: white;
+    background-color: #00000067; /* Azul neon para destaque */
+    color: #ffffff; /* Texto escuro para contraste */
     padding: 10px 10px;
     text-align: center;
 }
 
 .cabecalho h1 {
     margin-top: 0;
-    font-size: 1.9 em;
+    font-size: 1.9em;
     text-align: left;
 }
 
 /*
  * --------------------------------
- * Estilo do Container e Cards (Receitas)
+ * Estilo do Container e Cards (Jogos)
  * --------------------------------
 */
-.card-container {
+.container-card {
     display: flex;
     justify-content: space-around;
-    flex-wrap: wrap; 
+    flex-wrap: wrap;
     padding: 30px 1px;
     max-width: 1200px;
-    margin: 0 auto; 
+    margin: 0 auto;
+    
 }
 
-.card {
-    /* Estilo base de todas as receitas */
-    width: 450px;
+.card-jogo {
+    width: 490px;
     margin: 20px;
     padding: 25px;
     border-radius: 25px;
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* Sombra um pouco mais proeminente */
-    transition: all 0.3s ease-in-out; 
+    background-color: #F0F0F5; /* Fundo claro neutro */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.25);
+    transition: all 0.3s ease-in-out;
     text-align: center;
+
+
 }
 
-.card:hover {
-    transform: translateY(-8px) scale(1.02); /* Efeito de elevação agradável */
+.descricao{
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.card-jogo:hover {
+    transform: translateY(-8px) scale(1.02);
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
 
-/* CORES TEMÁTICAS PARA AS RECEITAS */
-.card-primario {
-    background-color: #fffde7; /* Amarelo muito claro (massa/baunilha) */
+.card-jogo-primario {
+    background-color: #29262c; /* Amarelo dourado */
 }
 
-.card-secundario {
-    background-color: #e6f7ff; /* Azul/verde claro (água/saudável) */
+.card-jogo-secundario {
+    background-color: #00B4D8; /* Azul neon */
 }
 
-.card-terciario {
-    background-color: #fbe6e6; /* Rosa claro (carne/torta) */
+.card-jogo-terciario {
+    background-color: #FF6347; /* Laranja-avermelhado */
 }
 
-.card h2 {
-    color: #4e342e; /* Marrom para títulos */
+.card-jogo h2 {
+    color: #FF6347; /* Títulos em laranja-avermelhado */
     margin-top: 0;
     margin-bottom: 15px;
 }
 
-.card p {
-    color: #555;
+.card-jogo p {
+    color: #F0F0F5; /* Ajuste para texto nos cards */
     font-size: 0.95em;
-    min-height: 50px; /* Para manter os cards alinhados, mesmo com pouco texto */
+    min-height: 50px;
 }
 
 /*
@@ -93,36 +111,35 @@ body {
  * Estilo dos Elementos Internos (Tags e Botão)
  * --------------------------------
 */
-.tags-receita {
+.tags-card {
     margin: 15px 0;
 }
 
-.destaque {
-    /* Estilo base para Tempo e Dificuldade */
+.destaque-card {
     display: inline-block;
     padding: 6px 12px;
     margin: 5px 3px;
-    border-radius: 20px; /* Borda arredondada (pill shape) */
+    border-radius: 20px;
     font-size: 0.8em;
     font-weight: 600;
     color: white;
+    background-color: #00B4D8; /* Azul neon como base */
 }
 
-/* CORES VIBRANTES PARA OS DESTAQUES */
-.destaque-tempo {
-    background-color: #8d6e63; /* Marrom claro */
+.duração-card {
+    background-color: #1909ff; /* Amarelo dourado para duração */
 }
 
-.destaque-dificuldade {
-    background-color: #ef6c00; /* Laranja forte */
+.avaliação-card {
+    background-color: #FF6347; /* Laranja-avermelhado para avaliações */
 }
 
-.btn-ver-receita {
+.botao-ver-review {
     display: block;
     width: 80%;
     margin: 20px auto 0;
     padding: 10px;
-    background-color: #ff5722; /* Laranja de destaque (ação) */
+    background-color: #FF6347; /* Laranja-avermelhado para botões */
     color: white;
     text-decoration: none;
     border-radius: 6px;
@@ -131,8 +148,8 @@ body {
     transition: background-color 0.2s;
 }
 
-.btn-ver-receita:hover {
-    background-color: #e64a19; /* Laranja mais escuro no hover */
+.botao-ver-review:hover {
+    background-color: #E74C3C; /* Variação mais escura */
 }
 
 /*
@@ -141,19 +158,21 @@ body {
  * --------------------------------
 */
 .rodape {
-    background-color: #333;
-    color: #ccc;
+    background-color: #1C1C2B; /* Fundo escuro */
+    color: #F0F0F5; /* Texto neutro */
     text-align: center;
     padding: 20px;
     margin-top: 40px;
 }
 
 @media (max-width: 768px) {
-    .card {
-        width: 90%; 
+    .card-jogo {
+        width: 90%;
         margin: 15px auto;
     }
     .cabecalho h1 {
         font-size: 2em;
     }
 }
+
+/**/
