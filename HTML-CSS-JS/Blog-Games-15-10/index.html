@@ -1,24 +1,351 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/style.css">
     <title>GameSpheres</title>
+    <style>
+        /*
+ * --------------------------------
+ * RESET e Estilos Base
+ * --------------------------------
+*/
+
+/* Estilos anteriores mantidos */
+body {
+    background-color: #1C1C2B;
+    color: #F0F0F5;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    background: radial-gradient(125% 125% at -2% 101%,
+            rgba(245, 87, 2, 1) 10.5%,
+            rgba(245, 120, 2, 1) 16%,
+            rgba(245, 140, 2, 1) 17.5%,
+            rgba(245, 170, 100, 1) 25%,
+            rgba(238, 174, 202, 1) 40%,
+            rgba(202, 179, 214, 1) 65%,
+            rgba(148, 201, 233, 1) 100%);
+}
+
+/* Estilos anteriores do header mantidos */
+.cabecalho {
+    background-color: #00000067;
+    color: #ffffff;
+    padding: 11px 10px;
+    text-align: center;
+    width: 100%;
+    height: 100%;
+    justify-content: space-between;
+    align-items: center;
+    display: flex;
+    position: relative; /* Importante para posicionamento do menu */
+}
+
+.Logo {
+    width: 100px;
+    height: auto;
+    display: block;
+    margin-right: 10px;
+}
+
+/*
+ * --------------------------------
+ * Módulo 1: O "Switch" Invisível e Rótulo do Ícone
+ * --------------------------------
+*/
+
+/* O interruptor invisível */
+.menu-toggle {
+    display: none; /* Escondemos o checkbox */
+}
+
+/* O rótulo que será nosso ícone hamburguer */
+.hamburger-menu {
+    display: none; /* Inicialmente escondido em telas grandes */
+    flex-direction: column;
+    justify-content: space-around;
+    width: 30px;
+    height: 25px;
+    cursor: pointer;
+    z-index: 1001; /* Garante que fique acima de outros elementos */
+}
+
+/* As três barras do ícone hamburguer */
+.hamburger-menu span {
+    display: block;
+    height: 3px;
+    width: 100%;
+    background-color: #ffffff;
+    border-radius: 3px;
+    transition: all 0.3s ease;
+}
+
+/*
+ * --------------------------------
+ * Módulo 2: A Lógica Visual do CSS
+ * --------------------------------
+*/
+
+/* Estilos da navegação para desktop (mantidos do original) */
+.barra-navegacao {
+    background-color: #00b4d800;
+    padding: 10px;
+    text-align: center;
+}
+
+.barra-navegacao ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: right;
+}
+
+.barra-navegacao ul li {
+    margin: 0 15px;
+}
+
+.barra-navegacao ul li a {
+    color: #1C1C2B;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 10px 10px;
+    transition: color 0.3s;
+}
+
+.barra-navegacao ul li a:hover {
+    color: #8c00ff;
+}
+
+/*
+ * --------------------------------
+ * Ponto de Quebra (@media) - Responsividade
+ * --------------------------------
+*/
+
+@media (max-width: 768px) {
+    /* Esconde a navegação padrão em mobile */
+    .barra-navegacao ul {
+        display: none;
+    }
+    
+    /* Mostra o ícone hamburguer em mobile */
+    .hamburger-menu {
+        display: flex;
+    }
+    
+    /* Prepara o menu para ser controlado pelo checkbox */
+    .barra-navegacao {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: #000000e6;
+        padding: 0;
+        text-align: left;
+        transform: translateY(-10px);
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.3s ease;
+    }
+    
+    .barra-navegacao ul {
+        display: block;
+        padding: 20px;
+    }
+    
+    .barra-navegacao ul li {
+        margin: 0;
+        border-bottom: 1px solid #333;
+    }
+    
+    .barra-navegacao ul li:last-child {
+        border-bottom: none;
+    }
+    
+    .barra-navegacao ul li a {
+        display: block;
+        padding: 15px 10px;
+        color: #F0F0F5;
+        font-size: 1.1em;
+    }
+    
+    /*
+     * --------------------------------
+     * O Poder do Estado (:checked)
+     * --------------------------------
+    */
+    
+    /* Quando o checkbox está marcado, mostra o menu */
+    .menu-toggle:checked ~ .barra-navegacao {
+        transform: translateY(0);
+        opacity: 1;
+        visibility: visible;
+    }
+    
+    /* Animação do ícone hamburguer para X */
+    .menu-toggle:checked + .hamburger-menu span:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 5px);
+    }
+    
+    .menu-toggle:checked + .hamburger-menu span:nth-child(2) {
+        opacity: 0;
+    }
+    
+    .menu-toggle:checked + .hamburger-menu span:nth-child(3) {
+        transform: rotate(-45deg) translate(7px, -6px);
+    }
+    
+    /*
+     * --------------------------------
+     * Design para Toque (UX)
+     * --------------------------------
+    */
+    
+    /* Garante que os links sejam fáceis de tocar */
+    .barra-navegacao ul li a {
+        padding: 18px 15px; /* Espaçamento generoso para dedos */
+    }
+    
+    /* Ajustes para os cards em mobile */
+    .card-jogo {
+        width: 90%;
+        margin: 15px auto;
+    }
+}
+
+/* Restante do CSS permanece igual */
+.imagem-card {
+    width: 100%;
+    height: 50%;
+    object-fit: cover;
+    display: block;
+    border-radius: 16px;
+}
+
+.container-card {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    padding: 30px 1px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.card-jogo {
+    width: 490px;
+    margin: 20px;
+    padding: 25px;
+    border-radius: 25px;
+    background-color: #F0F0F5;
+    box-shadow: 0 6px 12px rgb(8, 19, 56);
+    transition: all 0.3s ease-in-out;
+    text-align: center;
+}
+
+.card-jogo:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.card-jogo-primario {
+    background-color: #8306ff00;
+}
+
+.card-jogo h2 {
+    color: #FF6347;
+    margin-top: 0;
+    margin-bottom: 15px;
+}
+
+.card-jogo p {
+    color: #000000;
+    font-size: 0.9 em;
+    min-height: 50px;
+}
+
+.tags-card {
+    margin: 15px 0;
+}
+
+.destaque-card {
+    display: inline-block;
+    padding: 6px 12px;
+    margin: 5px 3px;
+    border-radius: 20px;
+    font-size: 0.8em;
+    font-weight: 600;
+    color: white;
+    background-color: #00B4D8;
+}
+
+.duração-card {
+    background-color: #ff09de50;
+}
+
+.avaliação-card {
+    background-color: #ffb1099a;
+}
+
+.botao-ver-review {
+    display: block;
+    width: 80%;
+    margin: 20px auto 0;
+    padding: 10px;
+    color: white;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+    transition: background-color 0.2s;
+    border: none;
+    background-color: rgba(151, 95, 255, 0.315);
+    color: white;
+    box-shadow: 0px 10px 10px rgba(222, 213, 240, 0.644) inset,
+        0px 5px 10px rgba(5, 5, 5, 0.212),
+        0px -10px 10px rgb(124, 54, 255) inset;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.botao-ver-review:hover {
+    background-color: #0400ff;
+}
+
+.rodape {
+    background-color: #1C1C2B;
+    color: #F0F0F5;
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px;
+}
+    </style>
 </head>
 
 <body>
     <header class="cabecalho">
-           <img class = "Logo" src="/img/Logo.png" alt="logo" >
-         <nav class="barra-navegacao">
+        <img class="Logo" src="/img/Logo.png" alt="logo">
+        
+        <!-- Módulo 1: O "Switch" Invisível e Rótulo do Ícone -->
+        <input type="checkbox" id="menu-toggle" class="menu-toggle">
+        <label for="menu-toggle" class="hamburger-menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </label>
+        
+        <!-- Módulo 1: Posicionamento (Irmãos) -->
+        <nav class="barra-navegacao">
             <ul>
-              
                 <li><a href="#">Início</a></li>
                 <li><a href="#">Reviews</a></li>
                 <li><a href="#">Sobre</a></li>
-                
             </ul>
         </nav>
     </header>
