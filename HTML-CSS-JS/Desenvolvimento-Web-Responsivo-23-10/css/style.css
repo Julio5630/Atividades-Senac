@@ -1,0 +1,137 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    background-color: #f4f4f4;
+    color: #333;
+  }
+  
+  .container {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+  }
+  
+  /* Header */
+  header {
+    background-color: #1a1a1a;
+    padding: 20px 0;
+  }
+  
+  header h1 {
+    color: #fff;
+    text-align: center;
+    margin-bottom: 10px;
+  }
+  
+  nav ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    flex-wrap: wrap;
+  }
+  
+  nav ul li {
+    margin: 0 15px;
+  }
+  
+  nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  
+  nav ul li a:hover {
+    color: #ffcc00;
+  }
+  
+  /* Hero */
+  .hero {
+    background-image: url('https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/bc47194c-4389-40b2-b130-e3de76db4ea0/df5uscm-3f16c5f4-c591-4168-bcd8-037911bbf732.gif?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiIvZi9iYzQ3MTk0Yy00Mzg5LTQwYjItYjEzMC1lM2RlNzZkYjRlYTAvZGY1dXNjbS0zZjE2YzVmNC1jNTkxLTQxNjgtYmNkOC0wMzc5MTFiYmY3MzIuZ2lmIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.b1pbuoE3ceYxT20WYcieAFSSm1ci_sGD3tXIm-ro8OU');
+    background-size: cover;
+    background-position: center;
+    color: white;
+    text-align: center;
+    padding: 100px 20px;
+  }
+  
+  .hero h2 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+  }
+  
+  .hero p {
+    font-size: 1.2em;
+    margin-bottom: 30px;
+  }
+  
+  .btn {
+    display: inline-block;
+    background-color: #ffcc00;
+    color: #000;
+    padding: 10px 25px;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: 0.3s;
+  }
+  
+  .btn:hover {
+    background-color: #e6b800;
+  }
+  
+  /* Modelos */
+  .modelos {
+    padding: 50px 0;
+    background-color: #fff;
+  }
+  
+  .modelos h2 {
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 2em;
+  }
+  
+  .cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+  }
+  
+  .card {
+    background-color: #fafafa;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    text-align: center;
+  }
+  
+  .card img {
+    width: 100%;
+    height: auto;
+  }
+  
+  .card h3 {
+    margin: 15px 0 10px;
+  }
+  
+  .card p {
+    padding: 0 15px 15px;
+  }
+  
+  /* Footer */
+  footer {
+    background-color: #1a1a1a;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 50px;
+  }
+  
+  
