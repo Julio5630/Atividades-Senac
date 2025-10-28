@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mini Portfolio Responsivo</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="container header-content">
+            <div class="logo">Port<span>folio</span></div>
+            <nav>
+                <ul>
+                    <li><a href="#sobre"><i class="fas fa-user"></i> Sobre Mim</a></li>
+                    <li><a href="#projetos"><i class="fas fa-project-diagram"></i> Projetos</a></li>
+                    <li><a href="#contato"><i class="fas fa-envelope"></i> Contato</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section id="sobre" class="fade-in">
+            <div class="container">
+                <h2 class="section-title">Sobre Mim</h2>
+                <div class="about-content">
+                    <div class="profile-img">
+                        <img src="https://avatars.githubusercontent.com/u/205669518?v=4" alt="Foto de perfil">
+                    </div>
+                    <div class="about-text">
+                        <h3>Olá, eu sou Júlio César</h3>
+                        <p>Sou um desenvolvedor front-end apaixonado por criar experiências web incríveis e responsivas.</p>
+                        <p>Meu objetivo é criar interfaces que não apenas sejam visualmente atraentes, mas também intuitivas e acessíveis para todos os usuários. Acredito que o design e a funcionalidade devem andar juntos para proporcionar a melhor experiência possível.</p>
+                        <p>Quando não estou codando, gosto de explorar novas tendências de design, aprender novas tecnologias e contribuir para projetos de código aberto.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="projetos" class="fade-in">
+            <div class="container">
+                <h2 class="section-title">Meus Projetos</h2>
+                <div class="projects-grid">
+                    <article class="project-card">
+                        <div class="project-img">
+                            <i class="fas fa-tasks"></i>
+                        </div>
+                        <div class="project-info">
+                            <h3>Sistema de Gerenciamento para Clínica Habilitar</h3>
+                            <p>Um sistema completo para gestão de processos de habilitação veicular, desenvolvido em C.</p>
+                            <a href="#" class="btn">Ver mais</a>
+                        </div>
+                    </article>
+                    <article class="project-card">
+                        <div class="project-img">
+                            <i class="fas fa-tasks"></i>
+                        </div>
+                        <div class="project-info">
+                            <h3>Aplicativo de Tarefas</h3>
+                            <p>Criação de um aplicativo web para gerenciamento de tarefas com funcionalidades de arrastar e soltar, categorias e lembretes.</p>
+                            <a href="#" class="btn">Ver mais</a>
+                        </div>
+                    </article>
+                    <article class="project-card">
+                        <div class="project-img">
+                            <i class="fas fa-tasks"></i>
+                        </div>
+                        <div class="project-info">
+                            <h3>Dashboard Analytics</h3>
+                            <p>Implementação de um painel de controle com gráficos interativos e visualização de dados em tempo real para análise de métricas.</p>
+                            <a href="#" class="btn">Ver mais</a>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section id="contato" class="fade-in">
+            <div class="container">
+                <h2 class="section-title">Entre em Contato</h2>
+                <div class="contact-content">
+                    <div class="contact-info">
+                        <h3>Informações de Contato</h3>
+                        <p><i class="fas fa-envelope"></i> juliocesarofficial9@gmail.com</p>
+                        <p><i class="fas fa-phone"></i> (61) 99999-9999</p>
+                        <p><i class="fas fa-map-marker-alt"></i> DF</p>
+                        <p>Estou sempre aberto a discutir novos projetos, ideias criativas ou oportunidades para fazer parte de sua visão.</p>
+                    </div>
+                    <div class="contact-form">
+                        <form id="contactForm">
+                            <div class="form-group">
+                                <label for="nome">Nome</label>
+                                <input type="text" id="nome" class="form-control" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">E-mail</label>
+                                <input type="email" id="email" class="form-control" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="mensagem">Mensagem</label>
+                                <textarea id="mensagem" class="form-control" required></textarea>
+                            </div>
+                            <button type="submit" class="btn">Enviar Mensagem</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-github"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                </div>
+                <div class="copyright">
+                    <p>&copy; 2023 João Silva. Todos os direitos reservados.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Alternar modo escuro
+        const themeToggle = document.getElementById('themeToggle');
+        const body = document.body;
+        
+        themeToggle.addEventListener('click', () => {
+            body.classList.toggle('dark-mode');
+            
+            // Alterar ícone
+            const icon = themeToggle.querySelector('i');
+            if (body.classList.contains('dark-mode')) {
+                icon.classList.remove('fa-moon');
+                icon.classList.add('fa-sun');
+            } else {
+                icon.classList.remove('fa-sun');
+                icon.classList.add('fa-moon');
+            }
+        });
+        
+        // Formulário de contato (apenas visual)
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Mensagem enviada com sucesso! (Esta é apenas uma demonstração visual)');
+            this.reset();
+        });
+    </script>
+</body>
+</html>
