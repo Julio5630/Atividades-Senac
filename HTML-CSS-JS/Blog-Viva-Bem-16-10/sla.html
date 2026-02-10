@@ -1,0 +1,149 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cards Interativos (CSS Puros)</title>
+    <link rel="stylesheet" href="css/style3.css"> 
+</head>
+<body>
+
+    <div class="header-section">
+        <h3>Comece Uma Nova Jornada</h3>
+        <h1>Aprenda Hábitos Saudáveis</h1>
+    </div>
+
+    <div class="radio-tab-container">
+        
+        <input type="radio" id="tab-alimento" name="tabs" checked>
+        
+        <input type="radio" id="tab-macro" name="tabs">
+
+        <div class="navigation-section">
+            <h2 class="section-title">Clique para Ver o Conteúdo</h2>
+            <div class="nav-cards-container">
+                
+                <label for="tab-alimento" class="nav-card">
+                    <p>Alimento Saudável</p>
+                </label>
+                
+                <label for="tab-macro" class="nav-card">
+                    <p>Macro e Micro nutrientes</p>
+                </label>
+            </div>
+        </div>
+
+        <div class="content-section">
+           
+
+            <div id="content-alimento" class="card content-card">
+                <div class="card-image-container">
+                    <img src="https://ichef.bbci.co.uk/ace/ws/640/cpsprodpb/89E2/production/_106589253_amino.jpg.webp" alt="Mix de frutas e vegetais" class="card-image">
+                    <span class="image-overlay-text">Nutrição Básica</span>
+                </div>
+                <div class="card-content">
+                    <h4>O Alimento Saudável</h4>
+                    <p>A alimentação saudável é essencial para manter o corpo funcionando bem, prevenir doenças e garantir mais qualidade de vida. Ela consiste em consumir alimentos variados, naturais e nutritivos, como frutas, verduras, legumes, grãos integrais, proteínas magras e bastante água.
+
+                        Evitar o excesso de alimentos ultraprocessados, como refrigerantes, salgadinhos, embutidos e doces industrializados, também é uma parte importante desse estilo de vida. Esses produtos geralmente contêm muito açúcar, gordura e sódio, o que pode causar problemas como obesidade, diabetes e pressão alta.
+                        
+                        Comer bem não significa fazer dietas restritivas, mas sim ter equilíbrio. É possível ter prazer em comer e, ao mesmo tempo, cuidar da saúde. Além disso, bons hábitos alimentares melhoram a disposição, o humor e até a concentração.
+                        
+                        Começar a ter uma alimentação saudável pode ser mais fácil do que parece: comer mais comida de verdade, cozinhar em casa sempre que possível e prestar atenção na fome e na saciedade são ótimos passos iniciais.
+                    </p>
+                </div>
+                <a href="#" class="card-link">Saiba Mais</a>
+            </div>
+
+            <div id="content-macro" class="card content-card">
+                <div class="card-image-container">
+                    <img src="data:image/jpeg;base64,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" alt="Estrutura molecular/células" class="card-image">
+                    <span class="image-overlay-text">Ciência da Nutrição</span>
+                </div>
+                <div class="card-content">
+                    <h4>Macro e Micronutrientes</h4>
+                    <p>
+                        Macronutrientes
+
+                        São os nutrientes que o corpo precisa em grandes quantidades. Eles fornecem energia (calorias) e são fundamentais para a estrutura e funcionamento do organismo.
+                        
+                        Principais macronutrientes:
+                        
+                        Carboidratos
+                        
+                        Função: Fornecer energia rápida.
+                        
+                        Fontes: Arroz, pão, massas, frutas, mel, batata.
+                        
+                        Calorias: 4 kcal por grama.
+                        
+                        Proteínas
+                        
+                        Função: Construção e reparo de tecidos (músculos, enzimas, hormônios).
+                        
+                        Fontes: Carnes, ovos, leite, feijão, lentilha, grão-de-bico.
+                        
+                        Calorias: 4 kcal por grama.
+                        
+                        Gorduras (lipídios)
+                        
+                        Função: Energia, proteção dos órgãos, absorção de vitaminas lipossolúveis (A, D, E, K).
+                        
+                        Fontes: Óleos, azeite, abacate, castanhas, manteiga, peixes gordurosos.
+                        
+                        Calorias: 9 kcal por grama.
+                        
+                        Água (às vezes considerada um "macro" essencial)
+                        
+                        Função: Transporte de nutrientes, regulação da temperatura, lubrificação de articulações.
+                        
+                        Fontes: Água pura, frutas, vegetais, sopas.   
+
+                        Micronutrientes
+
+                        São os nutrientes que o corpo precisa em pequenas quantidades, mas são essenciais para processos metabólicos, imunidade, crescimento e prevenção de doenças.
+
+                        Principais micronutrientes:
+
+                        Vitaminas
+
+                        Hidrossolúveis (diluídas em água)
+
+                        Vitamina C: frutas cítricas, pimentão, morango.
+
+                        Complexo B (B1, B2, B3, B6, B12, ácido fólico, etc.): carnes, ovos, vegetais verdes, grãos.
+
+                        Lipossolúveis (diluídas em gordura)
+
+                        Vitamina A: cenoura, abóbora, fígado.
+
+                        Vitamina D: sol, ovos, peixes.
+
+                        Vitamina E: óleos vegetais, nozes.
+
+                        Vitamina K: vegetais verdes escuros (couve, espinafre).
+
+                        Minerais
+
+                        Cálcio: ossos e dentes saudáveis (leite, queijo, couve).
+
+                        Ferro: transporte de oxigênio (carnes, feijão, espinafre).
+
+                        Zinco: imunidade (carne vermelha, sementes).
+
+                        Magnésio: função muscular e nervosa (banana, grãos, amêndoas).
+
+                        Potássio: equilíbrio hídrico e muscular (banana, batata, água de coco).
+
+                        Sódio: equilíbrio eletrolítico (sal, alimentos processados – com moderação).
+                    </p>
+                </div>
+                <a href="#" class="card-link">Saiba Mais</a>
+            </div>
+        </div>
+
+    </div> </body>
+</html>
+index.html
+Exibindo index.html.

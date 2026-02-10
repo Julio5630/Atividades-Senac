@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bowl de Açaí Premium</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: "Poppins", sans-serif;
+            background: linear-gradient(to right, #0a0a0a, #1a1a1a);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+            color: #e0e0e0;
+        }
+        
+        .card {
+            background: #111;
+            width: 100%;
+            max-width: 900px;
+            border-radius: 18px;
+            overflow: hidden;
+            box-shadow: 0 15px 30px rgba(0, 160, 0, 0.2);
+            transition: all 0.3s ease;
+            border: 1px solid #333;
+        }
+        
+        .card:hover {
+            box-shadow: 0 20px 40px rgba(0, 160, 0, 0.3);
+            transform: translateY(-5px);
+        }
+        
+        .card-header {
+            display: flex;
+            flex-direction: column;
+            padding: 25px;
+            background: linear-gradient(to right, #000, #0a2a0a);
+            color: #00cc00;
+            border-bottom: 1px solid #333;
+        }
+        
+        .card-title {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+        
+        h1 {
+            font-size: 28px;
+            font-weight: 700;
+            color: #00cc00;
+        }
+        
+        .tag {
+            background: rgba(0, 160, 0, 0.2);
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: 500;
+            color: #00cc00;
+            border: 1px solid #00aa00;
+        }
+        
+        .card-content {
+            display: flex;
+            flex-direction: column;
+            padding: 0;
+        }
+        
+        .main-content {
+            display: flex;
+            flex-wrap: wrap;
+        }
+        
+        .image-section {
+            flex: 1;
+            min-width: 300px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .image-section img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: brightness(0.9) contrast(1.1);
+            transition: transform 0.5s ease;
+        }
+        
+        .image-section:hover img {
+            transform: scale(1.05);
+        }
+        
+        .text-section {
+            flex: 1;
+            min-width: 300px;
+            padding: 25px;
+            background: #151515;
+        }
+        
+        h2 {
+            color: #00cc00;
+            margin-bottom: 15px;
+            font-size: 22px;
+        }
+        
+        p {
+            color: #ccc;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+        
+        .benefits {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin: 20px 0;
+        }
+        
+        .benefit {
+            background: rgba(0, 160, 0, 0.1);
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-size: 14px;
+            color: #00cc00;
+            font-weight: 500;
+            border: 1px solid #004400;
+            transition: all 0.3s ease;
+        }
+        
+        .benefit:hover {
+            background: rgba(0, 160, 0, 0.2);
+            transform: translateY(-2px);
+        }
+        
+        .btn {
+            background: #008000;
+            color: white;
+            padding: 12px 25px;
+            border: none;
+            border-radius: 12px;
+            cursor: pointer;
+            margin-top: 15px;
+            font-weight: 600;
+            font-size: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            transition: all 0.3s ease;
+            width: 100%;
+        }
+        
+        .btn:hover {
+            background: #00aa00;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 160, 0, 0.4);
+        }
+        
+        .btn i {
+            font-size: 18px;
+        }
+        
+        .expanded-content {
+            display: none;
+            padding: 25px;
+            background: #1a1a1a;
+            border-top: 1px solid #333;
+        }
+        
+        .expanded-content.active {
+            display: block;
+            animation: fadeIn 0.5s ease;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        .content-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+            margin-bottom: 25px;
+        }
+        
+        .info-box {
+            background: #222;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            border: 1px solid #333;
+            transition: transform 0.3s ease;
+        }
+        
+        .info-box:hover {
+            transform: translateY(-5px);
+        }
+        
+        .info-box h3 {
+            color: #00cc00;
+            margin-bottom: 15px;
+            font-size: 18px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .info-box ul {
+            padding-left: 20px;
+            color: #ccc;
+        }
+        
+        .info-box li {
+            margin-bottom: 8px;
+        }
+        
+        .nutrition {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin: 20px 0;
+        }
+        
+        .nutrient {
+            background: #222;
+            padding: 15px;
+            border-radius: 12px;
+            text-align: center;
+            flex: 1;
+            min-width: 120px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            border: 1px solid #333;
+            transition: transform 0.3s ease;
+        }
+        
+        .nutrient:hover {
+            transform: scale(1.05);
+        }
+        
+        .nutrient-value {
+            font-size: 24px;
+            font-weight: 700;
+            color: #00cc00;
+        }
+        
+        .nutrient-name {
+            font-size: 14px;
+            color: #aaa;
+        }
+        
+        .tips {
+            background: #222;
+            padding: 20px;
+            border-radius: 12px;
+            margin-top: 25px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            border: 1px solid #333;
+        }
+        
+        .tips h3 {
+            color: #00cc00;
+            margin-bottom: 15px;
+            font-size: 18px;
+        }
+        
+        .tip-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 15px;
+            padding: 10px;
+            border-radius: 8px;
+            transition: background 0.3s ease;
+        }
+        
+        .tip-item:hover {
+            background: rgba(0, 160, 0, 0.1);
+        }
+        
+        .tip-icon {
+            background: rgba(0, 160, 0, 0.2);
+            color: #00cc00;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+            flex-shrink: 0;
+            border: 1px solid #004400;
+        }
+        
+        .tip-text {
+            flex: 1;
+            color: #ccc;
+        }
+        
+        .recipe-steps {
+            background: #222;
+            padding: 20px;
+            border-radius: 12px;
+            margin-top: 25px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            border: 1px solid #333;
+        }
+        
+        .recipe-steps h3 {
+            color: #00cc00;
+            margin-bottom: 20px;
+            font-size: 18px;
+        }
+        
+        .step {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 20px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #333;
+            transition: background 0.3s ease;
+            border-radius: 8px;
+            padding: 15px;
+        }
+        
+        .step:hover {
+            background: rgba(0, 160, 0, 0.05);
+        }
+        
+        .step:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 15px;
+        }
+        
+        .step-number {
+            background: #008000;
+            color: white;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+            flex-shrink: 0;
+            font-weight: bold;
+        }
+        
+        .step-content {
+            flex: 1;
+            color: #ccc;
+        }
+        
+        strong {
+            color: #00cc00;
+        }
+        
+        @media (max-width: 768px) {
+            .card-header {
+                padding: 20px;
+            }
+            
+            h1 {
+                font-size: 24px;
+            }
+            
+            .text-section {
+                padding: 20px;
+            }
+            
+            .expanded-content {
+                padding: 20px;
+            }
+            
+            .main-content {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <div class="card-header">
+            <div class="card-title">
+                <h1>Bowl de Açaí Premium</h1>
+                <div class="tag">Superfood</div>
+            </div>
+            <p>Energia pura da Amazônia em uma tigela nutritiva e deliciosa</p>
+        </div>
+        
+        <div class="card-content">
+            <div class="main-content">
+                <div class="image-section">
+                    <img src="https://images.unsplash.com/photo-1570197788417-0e82375c9371?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Bowl de Açaí">
+                </div>
+                <div class="text-section">
+                    <h2>Energia Natural em Cada Colherada</h2>
+                    <p>O açaí é uma fruta típica da região amazônica, conhecida por seu alto valor nutricional e propriedades antioxidantes. Nosso bowl combina açaí puro com ingredientes selecionados para uma experiência energética e revitalizante.</p>
+                    
+                    <div class="benefits">
+                        <div class="benefit">Antioxidante</div>
+                        <div class="benefit">Energético</div>
+                        <div class="benefit">Rico em Fibras</div>
+                        <div class="benefit">Gorduras Boas</div>
+                        <div class="benefit">Fonte de Vitaminas</div>
+                    </div>
+                    
+                    <button class="btn" id="toggleBtn">
+                        <i class="fas fa-chevron-down"></i> Explorar Receita Completa
+                    </button>
+                </div>
+            </div>
+            
+            <div class="expanded-content" id="expandedContent">
+                <div class="content-grid">
+                    <div class="info-box">
+                        <h3><i class="fas fa-list"></i> Ingredientes Principais</h3>
+                        <ul>
+                            <li>Polpa de açaí puro (sem açúcar)</li>
+                            <li>Banana madura</li>
+                            <li>Granola sem açúcar</li>
+                            <li>Frutas vermelhas (morango, mirtilo)</li>
+                            <li>Xarope de agave (opcional)</li>
+                            <li>Sementes de chia</li>
+                            <li>Castanhas e nozes</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="info-box">
+                        <h3><i class="fas fa-clock"></i> Preparo</h3>
+                        <ul>
+                            <li>Tempo: 10 minutos</li>
+                            <li>Dificuldade: Fácil</li>
+                            <li>Rendimento: 1 porção</li>
+                            <li>Calorias: 320 kcal</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="info-box">
+                        <h3><i class="fas fa-heart"></i> Benefícios para a Saúde</h3>
+                        <ul>
+                            <li>Combate os radicais livres</li>
+                            <li>Melhora a circulação sanguínea</li>
+                            <li>Fornece energia sustentada</li>
+                            <li>Auxilia na recuperação muscular</li>
+                            <li>Fortalece o sistema imunológico</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="nutrition">
+                    <div class="nutrient">
+                        <div class="nutrient-value">320</div>
+                        <div class="nutrient-name">Calorias</div>
+                    </div>
+                    <div class="nutrient">
+                        <div class="nutrient-value">8g</div>
+                        <div class="nutrient-name">Proteínas</div>
+                    </div>
+                    <div class="nutrient">
+                        <div class="nutrient-value">45g</div>
+                        <div class="nutrient-name">Carboidratos</div>
+                    </div>
+                    <div class="nutrient">
+                        <div class="nutrient-value">12g</div>
+                        <div class="nutrient-name">Gorduras</div>
+                    </div>
+                    <div class="nutrient">
+                        <div class="nutrient-value">7g</div>
+                        <div class="nutrient-name">Fibras</div>
+                    </div>
+                </div>
+                
+                <div class="recipe-steps">
+                    <h3><i class="fas fa-mortar-pestle"></i> Modo de Preparo Detalhado</h3>
+                    <div class="step">
+                        <div class="step-number">1</div>
+                        <div class="step-content">
+                            <strong>Preparo da base:</strong> Bata no liquidificador a polpa de açaí semi-descongelada com 1 banana madura. Se necessário, adicione uma colher de sopa de água ou leite vegetal para facilitar o processamento.
+                        </div>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">2</div>
+                        <div class="step-content">
+                            <strong>Montagem do bowl:</strong> Despeje a mistura em uma tigela funda. A textura deve ser cremosa, nem muito líquida nem muito dura.
+                        </div>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">3</div>
+                        <div class="step-content">
+                            <strong>Adição das frutas:</strong> Corte as frutas selecionadas em pedaços médios e distribua sobre o açaí. Morangos fatiados, mirtilos inteiros e pedaços de banana funcionam bem.
+                        </div>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">4</div>
+                        <div class="step-content">
+                            <strong>Finalização:</strong> Polvilhe a granola, sementes de chia e castanhas picadas. Se desejar adoçar, utilize uma colher de chá de mel ou xarope de agave.
+                        </div>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">5</div>
+                        <div class="step-content">
+                            <strong>Toque final:</strong> Decore com folhas de hortelã e sirva imediatamente para aproveitar a textura ideal.
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="tips">
+                    <h3><i class="fas fa-lightbulb"></i> Dicas para um Açaí Perfeito</h3>
+                    <div class="tip-item">
+                        <div class="tip-icon">1</div>
+                        <div class="tip-text">
+                            <strong>Escolha do açaí:</strong> Prefira a polpa pura de açaí sem açúcar para controlar a doçura conforme sua preferência. O açaí de boa qualidade deve ter uma cor roxa intensa e aroma característico.
+                        </div>
+                    </div>
+                    <div class="tip-item">
+                        <div class="tip-icon">2</div>
+                        <div class="tip-text">
+                            <strong>Textura cremosa:</strong> Adicione a banana congelada para obter uma textura cremosa sem necessidade de açúcar. Quanto mais madura a banana, mais doce naturalmente ficará seu açaí.
+                        </div>
+                    </div>
+                    <div class="tip-item">
+                        <div class="tip-icon">3</div>
+                        <div class="tip-text">
+                            <strong>Complementos nutritivos:</strong> Para um bowl mais nutritivo, acrescente sementes de chia, linhaça ou castanhas. Esses ingredientes aumentam o teor de fibras, proteínas e gorduras boas.
+                        </div>
+                    </div>
+                    <div class="tip-item">
+                        <div class="tip-icon">4</div>
+                        <div class="tip-text">
+                            <strong>Hora de servir:</strong> Sirva imediatamente após o preparo para manter a textura ideal. Se precisar armazenar, cubra com filme plástico e deixe no freezer por no máximo 2 horas.
+                        </div>
+                    </div>
+                    <div class="tip-item">
+                        <div class="tip-icon">5</div>
+                        <div class="tip-text">
+                            <strong>Variedade de sabores:</strong> Experimente diferentes combinações de frutas para variar o sabor a cada preparo. Morango, kiwi, manga e abacaxi são excelentes opções.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const toggleBtn = document.getElementById('toggleBtn');
+        const expandedContent = document.getElementById('expandedContent');
+        
+        toggleBtn.addEventListener('click', function() {
+            expandedContent.classList.toggle('active');
+            
+            if (expandedContent.classList.contains('active')) {
+                toggleBtn.innerHTML = '<i class="fas fa-chevron-up"></i> Recolher Informações';
+            } else {
+                toggleBtn.innerHTML = '<i class="fas fa-chevron-down"></i> Explorar Receita Completa';
+            }
+        });
+    </script>
+</body>
+</html>

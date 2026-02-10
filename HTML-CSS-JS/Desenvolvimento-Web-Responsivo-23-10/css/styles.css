@@ -1,0 +1,204 @@
+/* Reset e base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+  }
+  
+  .container {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+  }
+  
+  /* Header */
+  .header {
+    background-color: #1a1a1a;
+    padding: 20px 0;
+  }
+  
+  .header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative; /* Para posicionar menu absoluto */
+  }
+  
+  .logo {
+    color: white;
+    font-size: 1.8rem;
+    font-weight: bold;
+  }
+  
+  /* Esconde checkbox */
+  #menu-toggle {
+    display: none;
+  }
+  
+  /* Ícone hambúrguer (label) */
+  .menu-icon {
+    display: none; /* Só aparece no mobile */
+    flex-direction: column;
+    justify-content: space-around;
+    width: 30px;
+    height: 25px;
+    cursor: pointer;
+  }
+  
+  .menu-icon span {
+    display: block;
+    height: 3px;
+    background-color: white;
+    border-radius: 3px;
+    transition: all 0.3s ease;
+  }
+  
+  /* Navegação padrão */
+  .nav-list {
+    display: flex;
+    gap: 20px;
+    list-style: none;
+  }
+  
+  .nav-list li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+  }
+  
+  .nav-list li a:hover {
+    color: #ffcc00;
+  }
+  
+  /* Hero */
+  .hero {
+    background-image: url('https://source.unsplash.com/1600x600/?cars');
+    background-size: cover;
+    background-position: center;
+    color: white;
+    text-align: center;
+    padding: 100px 20px;
+  }
+  
+  .hero h2 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+  }
+  
+  .hero p {
+    font-size: 1.2em;
+    margin-bottom: 30px;
+  }
+  
+  /* Botão padrão */
+  .btn {
+    display: inline-block;
+    background-color: #ffcc00;
+    color: #000;
+    padding: 10px 25px;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .btn:hover {
+    background-color: #e6b800;
+  }
+  
+  /* Modelos */
+  .modelos {
+    padding: 50px 0;
+    background-color: #fff;
+  }
+  
+  .titulo {
+    text-align: center;
+    font-size: 2em;
+    margin-bottom: 40px;
+  }
+  
+  .modelos-lista {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+  }
+  
+  .card {
+    background-color: #fafafa;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    flex: 1 1 300px;
+    max-width: 350px;
+    text-align: center;
+    overflow: hidden;
+  }
+  
+  .card img {
+    width: 100%;
+    height: auto;
+  }
+  
+  .card h3 {
+    margin: 15px 0 10px;
+  }
+  
+  .card p {
+    padding: 0 15px 15px;
+  }
+  
+  /* Footer */
+  .footer {
+    background-color: #1a1a1a;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 50px;
+  }
+  
+  /* RESPONSIVO - até 768px */
+  @media (max-width: 768px) {
+  
+    /* Mostra o menu hamburguer */
+    .menu-icon {
+      display: flex;
+    }
+  
+    /* Esconde o menu padrão */
+    .nav-list {
+      display: none;
+      flex-direction: column;
+      background-color: #1a1a1a;
+      position: absolute;
+      top: 60px;
+      right: 0;
+      width: 200px;
+      padding: 10px;
+      border-radius: 0 0 0 10px;
+      z-index: 1000;
+    }
+  
+    /* Mostra menu quando checkbox marcado */
+    #menu-toggle:checked + .menu-icon + .nav .nav-list {
+      display: flex;
+    }
+  
+    /* Ajusta o header para acomodar o menu absoluto */
+    .header-content {
+      flex-wrap: nowrap;
+    }
+  
+    /* Ajusta lista de modelos para coluna */
+    .modelos-lista {
+      flex-direction: column;
+      align-items: center;
+    }
+  }

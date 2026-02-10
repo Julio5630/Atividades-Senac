@@ -1,0 +1,242 @@
+
+/* Variáveis de Cores */
+:root {
+    --dark-bg: #121212;
+    --card-bg: #1e1e1e;
+    --text-color: #ffffff;
+    --accent-green: #4CAF50;
+    --light-text: #bdbdbd;
+    --border-color: #333333;
+    --active-green: #29742c;
+}
+
+/* Estilos Globais e de Fundo */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--dark-bg);
+    color: var(--text-color);
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    flex-direction: column;
+    width: 100%;
+}
+
+.header-section {
+    width: 100%;
+    max-width: 1000px;
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.header-section h3 {
+    color: var(--light-text);
+    font-weight: 500;
+    letter-spacing: 1px;
+    margin: 0;
+}
+
+.header-section h1 {
+    font-size: 2.5rem;
+    color: var(--text-color);
+    margin: 10px 0 0 0;
+}
+
+.section-title {
+    color: var(--accent-green);
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    margin-top: 40px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* ---------------------------------- */
+/* TRUQUE CSS (Radio/Label/Checkbox)  */
+/* ---------------------------------- */
+
+/* Esconde os inputs de rádio */
+.radio-tab-container input[type="radio"] {
+    display: none;
+}
+
+.radio-tab-container {
+    width: 100%;
+    max-width: 950px;
+    /* Usa flex para organizar a navegação e o conteúdo */
+    display: flex; 
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Esconde todos os cards de conteúdo por padrão */
+.content-card {
+    display: none; 
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+/* LÓGICA PRINCIPAL CSS: 
+    Quando o input com ID 'tab-alimento' está marcado, 
+    encontre o elemento com ID 'content-alimento' (irmão) e o mostre.
+*/
+#tab-alimento:checked ~ .content-section #content-alimento,
+#tab-macro:checked ~ .content-section #content-macro {
+    display: flex; /* Mostra o card */
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Estilo para destacar o item de navegação ativo */
+#tab-alimento:checked ~ .navigation-section label[for="tab-alimento"],
+#tab-macro:checked ~ .navigation-section label[for="tab-macro"] {
+    background-color: var(--accent-green);
+    border-color: var(--accent-green);
+    box-shadow: 0 0 15px rgba(76, 175, 80, 0.5);
+}
+
+#tab-alimento:checked ~ .navigation-section label[for="tab-alimento"] p,
+#tab-macro:checked ~ .navigation-section label[for="tab-macro"] p {
+    color: var(--dark-bg); /* Inverte a cor do texto do item ativo */
+}
+
+/* ---------------------------------- */
+/* Estilos de Navegação (LABELS Clicáveis) */
+/* ---------------------------------- */
+.navigation-section {
+    width: 100%;
+    max-width: 950px;
+    padding: 20px 0;
+}
+
+.nav-cards-container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.nav-card {
+    background-color: var(--card-bg);
+    border-radius: 8px;
+    width: 100%;
+    max-width: 450px;
+    padding: 20px 30px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease, border-color 0.3s ease;
+    border: 1px solid var(--border-color);
+    text-align: center;
+}
+
+.nav-card:hover {
+    background-color: #282828;
+    transform: translateY(-2px);
+}
+
+.nav-card p {
+    margin: 0;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--text-color);
+}
+
+/* ---------------------------------- */
+/* Estilos de Conteúdo (Cards Detalhados) */
+/* ---------------------------------- */
+.content-section {
+    width: 100%;
+    max-width: 950px;
+    display: flex;
+    justify-content: center;
+    padding: 40px 0;
+}
+
+.card {
+    background-color: var(--card-bg);
+    border-radius: 12px;
+    overflow: hidden;
+    width: 100%;
+    max-width: 700px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+    border: 1px solid var(--border-color);
+    flex-direction: column;
+}
+
+.card-image-container {
+    height: 250px;
+    position: relative;
+    background-color: #222;
+}
+
+.card-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+    opacity: 0.8;
+}
+
+.image-overlay-text {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    color: var(--light-text);
+    font-size: 0.85rem;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 5px 10px;
+    border-radius: 4px;
+}
+
+.card-content {
+    padding: 25px;
+}
+
+.card-content h4 {
+    font-size: 1.6rem;
+    margin-top: 0;
+    margin-bottom: 10px;
+    color: var(--text-color);
+}
+
+.card-content p {
+    font-size: 1rem;
+    line-height: 1.7;
+    color: var(--light-text);
+    margin-bottom: 15px;
+}
+
+.card-link {
+    display: block;
+    text-align: center;
+    padding: 15px 20px;
+    background-color: transparent;
+    color: var(--accent-green);
+    text-decoration: none;
+    font-weight: 600;
+    border-top: 1px solid var(--border-color);
+    transition: background-color 0.3s ease;
+    font-size: 1rem;
+}
+
+.card-link:hover {
+    background-color: rgba(76, 175, 80, 0.1);
+}
+
+/* Responsividade */
+@media (max-width: 960px) {
+    .nav-cards-container {
+        flex-direction: column;
+        align-items: center;
+    }
+    .nav-card, .card {
+        max-width: 90%;
+    }
+}
+styles.css
+Exibindo index.html.

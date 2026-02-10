@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Salada Mediterrânea Premium</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: "Poppins", sans-serif;
+            background: linear-gradient(to right, #0a0a0a, #1a1a1a);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+            color: #e0e0e0;
+        }
+        
+        .card {
+            background: #111;
+            width: 100%;
+            max-width: 420px;
+            border-radius: 18px;
+            overflow: hidden;
+            box-shadow: 0 15px 30px rgba(0, 160, 0, 0.2);
+            transition: all 0.3s ease;
+            border: 1px solid #333;
+        }
+        
+        .card:hover {
+            box-shadow: 0 20px 40px rgba(0, 160, 0, 0.3);
+            transform: translateY(-5px);
+        }
+        
+        .card-header {
+            display: flex;
+            flex-direction: column;
+            padding: 20px;
+            background: linear-gradient(to right, #000, #0a2a0a);
+            color: #00cc00;
+            border-bottom: 1px solid #333;
+        }
+        
+        .card-title {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+        
+        h1 {
+            font-size: 24px;
+            font-weight: 700;
+            color: #00cc00;
+        }
+        
+        .tag {
+            background: rgba(0, 160, 0, 0.2);
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 500;
+            color: #00cc00;
+            border: 1px solid #00aa00;
+        }
+        
+        .card-content {
+            display: flex;
+            flex-direction: column;
+            padding: 0;
+        }
+        
+        .image-section {
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .image-section img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            filter: brightness(0.9) contrast(1.1);
+            transition: transform 0.5s ease;
+        }
+        
+        .image-section:hover img {
+            transform: scale(1.05);
+        }
+        
+        .text-section {
+            padding: 20px;
+            background: #151515;
+        }
+        
+        h2 {
+            color: #00cc00;
+            margin-bottom: 12px;
+            font-size: 18px;
+        }
+        
+        p {
+            color: #ccc;
+            line-height: 1.6;
+            margin-bottom: 12px;
+            font-size: 14px;
+        }
+        
+        .benefits {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin: 15px 0;
+        }
+        
+        .benefit {
+            background: rgba(0, 160, 0, 0.1);
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            color: #00cc00;
+            font-weight: 500;
+            border: 1px solid #004400;
+            transition: all 0.3s ease;
+        }
+        
+        .benefit:hover {
+            background: rgba(0, 160, 0, 0.2);
+            transform: translateY(-2px);
+        }
+        
+        .btn {
+            background: #008000;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 12px;
+            cursor: pointer;
+            margin-top: 12px;
+            font-weight: 600;
+            font-size: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            transition: all 0.3s ease;
+            width: 100%;
+        }
+        
+        .btn:hover {
+            background: #00aa00;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 160, 0, 0.4);
+        }
+        
+        .btn i {
+            font-size: 16px;
+        }
+        
+        .expanded-content {
+            display: none;
+            padding: 20px;
+            background: #1a1a1a;
+            border-top: 1px solid #333;
+        }
+        
+        .expanded-content.active {
+            display: block;
+            animation: fadeIn 0.5s ease;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        .content-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 15px;
+            margin-bottom: 15px;
+        }
+        
+        .info-box {
+            background: #222;
+            padding: 15px;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            border: 1px solid #333;
+            transition: transform 0.3s ease;
+        }
+        
+        .info-box:hover {
+            transform: translateY(-3px);
+        }
+        
+        .info-box h3 {
+            color: #00cc00;
+            margin-bottom: 10px;
+            font-size: 16px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .info-box ul {
+            padding-left: 18px;
+            color: #ccc;
+            font-size: 13px;
+        }
+        
+        .info-box li {
+            margin-bottom: 6px;
+        }
+        
+        .nutrition {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin: 15px 0;
+        }
+        
+        .nutrient {
+            background: #222;
+            padding: 12px;
+            border-radius: 12px;
+            text-align: center;
+            flex: 1;
+            min-width: 80px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            border: 1px solid #333;
+            transition: transform 0.3s ease;
+        }
+        
+        .nutrient:hover {
+            transform: scale(1.05);
+        }
+        
+        .nutrient-value {
+            font-size: 20px;
+            font-weight: 700;
+            color: #00cc00;
+        }
+        
+        .nutrient-name {
+            font-size: 12px;
+            color: #aaa;
+        }
+        
+        .recipe-steps {
+            background: #222;
+            padding: 15px;
+            border-radius: 12px;
+            margin-top: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            border: 1px solid #333;
+        }
+        
+        .recipe-steps h3 {
+            color: #00cc00;
+            margin-bottom: 15px;
+            font-size: 16px;
+        }
+        
+        .step {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 15px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #333;
+            transition: background 0.3s ease;
+            border-radius: 8px;
+            padding: 12px;
+        }
+        
+        .step:hover {
+            background: rgba(0, 160, 0, 0.05);
+        }
+        
+        .step:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+        
+        .step-number {
+            background: #008000;
+            color: white;
+            width: 25px;
+            height: 25px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 12px;
+            flex-shrink: 0;
+            font-weight: bold;
+            font-size: 14px;
+        }
+        
+        .step-content {
+            flex: 1;
+            color: #ccc;
+            font-size: 13px;
+        }
+        
+        .tips {
+            background: #222;
+            padding: 15px;
+            border-radius: 12px;
+            margin-top: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            border: 1px solid #333;
+        }
+        
+        .tips h3 {
+            color: #00cc00;
+            margin-bottom: 12px;
+            font-size: 16px;
+        }
+        
+        .tip-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 12px;
+            padding: 8px;
+            border-radius: 8px;
+            transition: background 0.3s ease;
+        }
+        
+        .tip-item:hover {
+            background: rgba(0, 160, 0, 0.1);
+        }
+        
+        .tip-icon {
+            background: rgba(0, 160, 0, 0.2);
+            color: #00cc00;
+            width: 25px;
+            height: 25px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 12px;
+            flex-shrink: 0;
+            border: 1px solid #004400;
+            font-size: 12px;
+        }
+        
+        .tip-text {
+            flex: 1;
+            color: #ccc;
+            font-size: 13px;
+        }
+        
+        strong {
+            color: #00cc00;
+        }
+        
+        .image-gallery {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+            margin-top: 15px;
+        }
+        
+        .gallery-item {
+            position: relative;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+            transition: all 0.3s ease;
+        }
+        
+        .gallery-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 160, 0, 0.3);
+        }
+        
+        .gallery-img {
+            width: 100%;
+            height: 100px;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .gallery-item:hover .gallery-img {
+            transform: scale(1.1);
+        }
+        
+        .gallery-caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(0, 0, 0, 0.7);
+            color: #00cc00;
+            padding: 8px;
+            text-align: center;
+            font-weight: 500;
+            font-size: 12px;
+            transform: translateY(100%);
+            transition: transform 0.3s ease;
+        }
+        
+        .gallery-item:hover .gallery-caption {
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <div class="card-header">
+            <div class="card-title">
+                <h1>Salada Mediterrânea</h1>
+                <div class="tag">Saudável</div>
+            </div>
+            <p>Uma combinação leve e nutritiva inspirada na dieta mediterrânea</p>
+        </div>
+        
+        <div class="card-content">
+            <div class="image-section">
+                <img src="https://images.unsplash.com/photo-1546793665-c74683f339c1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Salada Mediterrânea">
+            </div>
+            <div class="text-section">
+                <h2>Leveza e Sabor do Mediterrâneo</h2>
+                <p>Uma combinação refrescante de folhas verdes, tomate-cereja, azeitonas, queijo feta e azeite de oliva. Inspirada na dieta mediterrânea, é excelente para o coração e o bem-estar.</p>
+                
+                <div class="benefits">
+                    <div class="benefit">Antioxidante</div>
+                    <div class="benefit">Rico em Fibras</div>
+                    <div class="benefit">Gorduras Boas</div>
+                    <div class="benefit">Baixa Caloria</div>
+                </div>
+                
+                <button class="btn" id="toggleBtn">
+                    <i class="fas fa-chevron-down"></i> Explorar Receita
+                </button>
+            </div>
+            
+            <div class="expanded-content" id="expandedContent">
+                <div class="content-grid">
+                    <div class="info-box">
+                        <h3><i class="fas fa-list"></i> Ingredientes</h3>
+                        <ul>
+                            <li>Mix de folhas verdes (alface, rúcula, espinafre)</li>
+                            <li>Tomate-cereja</li>
+                            <li>Queijo feta</li>
+                            <li>Azeitonas pretas</li>
+                            <li>Azeite de oliva extravirgem</li>
+                            <li>Vinagre balsâmico</li>
+                            <li>Ervas frescas (orégano, manjericão)</li>
+                            <li>Cebola roxa (opcional)</li>
+                            <li>Pepino (opcional)</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="nutrition">
+                    <div class="nutrient">
+                        <div class="nutrient-value">250</div>
+                        <div class="nutrient-name">Calorias</div>
+                    </div>
+                    <div class="nutrient">
+                        <div class="nutrient-value">8g</div>
+                        <div class="nutrient-name">Proteínas</div>
+                    </div>
+                    <div class="nutrient">
+                        <div class="nutrient-value">15g</div>
+                        <div class="nutrient-name">Carboidratos</div>
+                    </div>
+                    <div class="nutrient">
+                        <div class="nutrient-value">18g</div>
+                        <div class="nutrient-name">Gorduras</div>
+                    </div>
+                    <div class="nutrient">
+                        <div class="nutrient-value">5g</div>
+                        <div class="nutrient-name">Fibras</div>
+                    </div>
+                </div>
+                
+                <div class="recipe-steps">
+                    <h3><i class="fas fa-mortar-pestle"></i> Modo de Preparo</h3>
+                    <div class="step">
+                        <div class="step-number">1</div>
+                        <div class="step-content">
+                            <strong>Preparo das folhas:</strong> Lave e seque bem as folhas verdes. Rasgue-as com as mãos para preservar a textura.
+                        </div>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">2</div>
+                        <div class="step-content">
+                            <strong>Corte dos ingredientes:</strong> Corte os tomates-cereja ao meio e pique o queijo feta em cubos. Se usar, fatie a cebola roxa e o pepino.
+                        </div>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">3</div>
+                        <div class="step-content">
+                            <strong>Montagem:</strong> Em uma saladeira, distribua as folhas, tomates, azeitonas, queijo feta e os demais ingredientes.
+                        </div>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">4</div>
+                        <div class="step-content">
+                            <strong>Tempero:</strong> Regue com azeite, vinagre balsâmico e finalize com as ervas frescas. Tempere com sal e pimenta a gosto.
+                        </div>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">5</div>
+                        <div class="step-content">
+                            <strong>Descanso:</strong> Deixe a salada descansar por 5-10 minutos antes de servir para os sabores se integrarem.
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="tips">
+                    <h3><i class="fas fa-lightbulb"></i> Dicas</h3>
+                    <div class="tip-item">
+                        <div class="tip-icon">1</div>
+                        <div class="tip-text">
+                            <strong>Temperatura ideal:</strong> Sirva a salada gelada para realçar o sabor e a frescura dos ingredientes.
+                        </div>
+                    </div>
+                    <div class="tip-item">
+                        <div class="tip-icon">2</div>
+                        <div class="tip-text">
+                            <strong>Proteína extra:</strong> Adicione frango grelhado, atum ou grão-de-bico para uma refeição completa e nutritiva.
+                        </div>
+                    </div>
+                    <div class="tip-item">
+                        <div class="tip-icon">3</div>
+                        <div class="tip-text">
+                            <strong>Conservação:</strong> Prepare o tempero na hora de servir para manter as folhas crocantes e frescas.
+                        </div>
+                    </div>
+                    <div class="tip-item">
+                        <div class="tip-icon">4</div>
+                        <div class="tip-text">
+                            <strong>Variantes:</strong> Experimente adicionar nozes, castanhas ou sementes para textura extra e nutrientes adicionais.
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="image-gallery">
+                    <div class="gallery-item">
+                        <img src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80" alt="Ingredientes da salada" class="gallery-img">
+                        <div class="gallery-caption">Ingredientes Frescos</div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="https://images.unsplash.com/photo-1540420773420-3366772f4999?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80" alt="Salada montada" class="gallery-img">
+                        <div class="gallery-caption">Salada Montada</div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="https://images.unsplash.com/photo-1476224203421-9ac39bcb3327?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80" alt="Temperos" class="gallery-img">
+                        <div class="gallery-caption">Temperos Naturais</div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="https://images.unsplash.com/photo-1533089860892-a7c6f0a88666?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80" alt="Salada finalizada" class="gallery-img">
+                        <div class="gallery-caption">Pronta para Servir</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const toggleBtn = document.getElementById('toggleBtn');
+        const expandedContent = document.getElementById('expandedContent');
+        
+        toggleBtn.addEventListener('click', function() {
+            expandedContent.classList.toggle('active');
+            
+            if (expandedContent.classList.contains('active')) {
+                toggleBtn.innerHTML = '<i class="fas fa-chevron-up"></i> Recolher';
+            } else {
+                toggleBtn.innerHTML = '<i class="fas fa-chevron-down"></i> Explorar Receita';
+            }
+        });
+    </script>
+</body>
+</html>

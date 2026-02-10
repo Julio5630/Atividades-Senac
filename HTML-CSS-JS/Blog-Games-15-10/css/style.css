@@ -3,15 +3,44 @@
  * RESET e Estilos Base
  * --------------------------------
 */
+.barra-navegacao {
+    background-color: #00b4d800; /* Mesma cor do header para integração */
+    padding: 10px;
+    text-align: center;
+}
+.barra-navegacao ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: right;
+}
+.barra-navegacao ul li {
+    margin: 0 15px;
+}
+.barra-navegacao ul li a {
+    color: #ffffff; /* Texto escuro para contraste */
+    text-decoration: none;
+    font-weight: bold;
+    padding: 10px 10px;
+    transition: color 0.3s;
+}
+.barra-navegacao ul li a:hover {
+    color: #8c00ff; /* Amarelo dourado no hover */
+}
 
-/* Estilos anteriores mantidos */
 body {
     background-color: #1C1C2B;
+    /* Fundo escuro para imersão */
     color: #F0F0F5;
+    /* Texto neutro para legibilidade */
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0;
     padding: 0;
     line-height: 1.6;
+    /* Gradiente Linear com Toque Metálico e Frio */
+    width: 100%;
+    height: 100%;
     background: radial-gradient(125% 125% at -2% 101%,
             rgba(245, 87, 2, 1) 10.5%,
             rgba(245, 120, 2, 1) 16%,
@@ -22,194 +51,6 @@ body {
             rgba(148, 201, 233, 1) 100%);
 }
 
-/* Estilos anteriores do header mantidos */
-.cabecalho {
-    background-color: #00000067;
-    color: #ffffff;
-    padding: 11px 10px;
-    text-align: center;
-    width: 100%;
-    height: 100%;
-    justify-content: space-between;
-    align-items: center;
-    display: flex;
-    position: relative; /* Importante para posicionamento do menu */
-}
-
-.Logo {
-    width: 100px;
-    height: auto;
-    display: block;
-    margin-right: 10px;
-}
-
-/*
- * --------------------------------
- * Módulo 1: O "Switch" Invisível e Rótulo do Ícone
- * --------------------------------
-*/
-
-/* O interruptor invisível */
-.menu-toggle {
-    display: none; /* Escondemos o checkbox */
-}
-
-/* O rótulo que será nosso ícone hamburguer */
-.hamburger-menu {
-    display: none; /* Inicialmente escondido em telas grandes */
-    flex-direction: column;
-    justify-content: space-around;
-    width: 30px;
-    height: 25px;
-    cursor: pointer;
-    z-index: 1001; /* Garante que fique acima de outros elementos */
-}
-
-/* As três barras do ícone hamburguer */
-.hamburger-menu span {
-    display: block;
-    height: 3px;
-    width: 100%;
-    background-color: #ffffff;
-    border-radius: 3px;
-    transition: all 0.3s ease;
-}
-
-/*
- * --------------------------------
- * Módulo 2: A Lógica Visual do CSS
- * --------------------------------
-*/
-
-/* Estilos da navegação para desktop (mantidos do original) */
-.barra-navegacao {
-    background-color: #00b4d800;
-    padding: 10px;
-    text-align: center;
-}
-
-.barra-navegacao ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    justify-content: right;
-}
-
-.barra-navegacao ul li {
-    margin: 0 15px;
-}
-
-.barra-navegacao ul li a {
-    color: #1C1C2B;
-    text-decoration: none;
-    font-weight: bold;
-    padding: 10px 10px;
-    transition: color 0.3s;
-}
-
-.barra-navegacao ul li a:hover {
-    color: #8c00ff;
-}
-
-/*
- * --------------------------------
- * Ponto de Quebra (@media) - Responsividade
- * --------------------------------
-*/
-
-@media (max-width: 768px) {
-    /* Esconde a navegação padrão em mobile */
-    .barra-navegacao ul {
-        display: none;
-    }
-    
-    /* Mostra o ícone hamburguer em mobile */
-    .hamburger-menu {
-        display: flex;
-    }
-    
-    /* Prepara o menu para ser controlado pelo checkbox */
-    .barra-navegacao {
-        position: absolute;
-        top: 100%;
-        left: 0;
-        width: 100%;
-        background-color: #000000e6;
-        padding: 0;
-        text-align: left;
-        transform: translateY(-10px);
-        opacity: 0;
-        visibility: hidden;
-        transition: all 0.3s ease;
-    }
-    
-    .barra-navegacao ul {
-        display: block;
-        padding: 20px;
-    }
-    
-    .barra-navegacao ul li {
-        margin: 0;
-        border-bottom: 1px solid #333;
-    }
-    
-    .barra-navegacao ul li:last-child {
-        border-bottom: none;
-    }
-    
-    .barra-navegacao ul li a {
-        display: block;
-        padding: 15px 10px;
-        color: #F0F0F5;
-        font-size: 1.1em;
-    }
-    
-    /*
-     * --------------------------------
-     * O Poder do Estado (:checked)
-     * --------------------------------
-    */
-    
-    /* Quando o checkbox está marcado, mostra o menu */
-    .menu-toggle:checked ~ .barra-navegacao {
-        transform: translateY(0);
-        opacity: 1;
-        visibility: visible;
-    }
-    
-    /* Animação do ícone hamburguer para X */
-    .menu-toggle:checked + .hamburger-menu span:nth-child(1) {
-        transform: rotate(45deg) translate(5px, 5px);
-    }
-    
-    .menu-toggle:checked + .hamburger-menu span:nth-child(2) {
-        opacity: 0;
-    }
-    
-    .menu-toggle:checked + .hamburger-menu span:nth-child(3) {
-        transform: rotate(-45deg) translate(7px, -6px);
-    }
-    
-    /*
-     * --------------------------------
-     * Design para Toque (UX)
-     * --------------------------------
-    */
-    
-    /* Garante que os links sejam fáceis de tocar */
-    .barra-navegacao ul li a {
-        padding: 18px 15px; /* Espaçamento generoso para dedos */
-    }
-    
-    /* Ajustes para os cards em mobile */
-    .card-jogo {
-        width: 90%;
-        margin: 15px auto;
-    }
-}
-
-/* Restante do CSS permanece igual */
 .imagem-card {
     width: 100%;
     height: 50%;
@@ -218,6 +59,34 @@ body {
     border-radius: 16px;
 }
 
+.cabecalho {
+    background-color: #00000067;
+    /* Azul neon para destaque */
+    color: #ffffff;
+    /* Texto escuro para contraste */
+    padding: 11px 10px;
+    text-align: center;
+    width: 100%;
+    height: 100%;
+    justify-content: space-between;
+    align-items: center;
+    display: flex;
+
+}
+
+
+.cabecalho h1 {
+    margin-top: 0;
+    font-size: 1.9em;
+    text-align: left;
+    ;
+}
+
+/*
+ * --------------------------------
+ * Estilo do Container e Cards (Jogos)
+ * --------------------------------
+*/
 .container-card {
     display: flex;
     justify-content: space-around;
@@ -225,6 +94,7 @@ body {
     padding: 30px 1px;
     max-width: 1200px;
     margin: 0 auto;
+
 }
 
 .card-jogo {
@@ -233,9 +103,16 @@ body {
     padding: 25px;
     border-radius: 25px;
     background-color: #F0F0F5;
+    /* Fundo claro neutro */
     box-shadow: 0 6px 12px rgb(8, 19, 56);
     transition: all 0.3s ease-in-out;
     text-align: center;
+
+
+}
+
+.descricao {
+    font-family: 'Times New Roman', Times, serif;
 }
 
 .card-jogo:hover {
@@ -245,20 +122,29 @@ body {
 
 .card-jogo-primario {
     background-color: #8306ff00;
+    /* Amarelo dourado */
 }
 
 .card-jogo h2 {
     color: #FF6347;
+    /* Títulos em laranja-avermelhado */
     margin-top: 0;
     margin-bottom: 15px;
 }
 
 .card-jogo p {
     color: #000000;
+    /* Ajuste para texto nos cards */
     font-size: 0.9 em;
     min-height: 50px;
+    ;
 }
 
+/*
+ * --------------------------------
+ * Estilo dos Elementos Internos (Tags e Botão)
+ * --------------------------------
+*/
 .tags-card {
     margin: 15px 0;
 }
@@ -272,14 +158,17 @@ body {
     font-weight: 600;
     color: white;
     background-color: #00B4D8;
+    /* Azul neon como base */
 }
 
 .duração-card {
     background-color: #ff09de50;
+    /* Amarelo dourado para duração */
 }
 
 .avaliação-card {
     background-color: #ffb1099a;
+    /* Laranja-avermelhado para avaliações */
 }
 
 .botao-ver-review {
@@ -287,6 +176,7 @@ body {
     width: 80%;
     margin: 20px auto 0;
     padding: 10px;
+    /* Laranja-avermelhado para botões */
     color: white;
     text-decoration: none;
     border-radius: 6px;
@@ -307,12 +197,40 @@ body {
 
 .botao-ver-review:hover {
     background-color: #0400ff;
+    /* Variação mais escura */
 }
 
+/*
+ * --------------------------------
+ * Rodapé e Responsividade
+ * --------------------------------
+*/
 .rodape {
     background-color: #1C1C2B;
+    /* Fundo escuro */
     color: #F0F0F5;
+    /* Texto neutro */
     text-align: center;
     padding: 20px;
     margin-top: 40px;
 }
+
+.Logo {
+    width: 100px;
+    height: auto;
+    display: block;
+    margin-right: 10px; /* Espaço entre logo e o resto */
+}
+
+@media (max-width: 768px) {
+    .card-jogo {
+        width: 90%;
+        margin: 15px auto;
+    }
+
+    .cabecalho h1 {
+        font-size: 2em;
+    }
+}
+
+/**/
