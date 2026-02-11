@@ -3,6 +3,7 @@
   margin: 2rem auto;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   text-align: center;
+  
 }
 
 form {
@@ -20,11 +21,21 @@ input {
 
 button {
   cursor: pointer;
-  background-color: #61dafb;
+  background-color: hsl(271, 49%, 39%);
   border: none;
   padding: 8px 12px;
   border-radius: 4px;
   font-weight: bold;
+}
+
+.buttonR {
+  cursor: pointer;
+  background-color: hsl(271, 49%, 39%);
+  border: none;
+  padding: 8px 12px;
+  border-radius: 4px;
+  font-weight: bold;
+  
 }
 
 ul {

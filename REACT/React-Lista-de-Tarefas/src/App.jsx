@@ -21,7 +21,7 @@ function App() {
 
   return (
     <div className="container">
-      <h1>Minha Lista de Estudos</h1>
+      <h1>𝐌𝐢𝐧𝐡𝐚 𝐋𝐢𝐬𝐭𝐚 𝐝𝐞 𝐄𝐬𝐭𝐮𝐝𝐨𝐬✎</h1>
 
       <form onSubmit={adicionarTarefa}>
         <input 
@@ -30,14 +30,14 @@ function App() {
           value={inputTarefa}
           onChange={(e) => setInputTarefa(e.target.value)} 
         />
-        <button type="submit">Adicionar</button>
+        <button type="submit">𝐀𝐝𝐢𝐜𝐢𝐨𝐧𝐚𝐫</button>
       </form>
 
       <ul>
         {tarefas.map((tarefa, index) => (
           <li key={index}>
             {tarefa}
-            <button onClick={() => removerTarefa(index)}>❌</button>
+            <button className='buttonR' onClick={() => removerTarefa(index)}>❌</button>
           </li>
         ))}
       </ul>
