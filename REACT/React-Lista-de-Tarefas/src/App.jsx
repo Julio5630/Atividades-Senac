@@ -21,7 +21,7 @@ function App() {
 
   return (
     <div className="container">
-      <h1>𝐌𝐢𝐧𝐡𝐚 𝐋𝐢𝐬𝐭𝐚 𝐝𝐞 𝐄𝐬𝐭𝐮𝐝𝐨𝐬✎</h1>
+      <h1>Meu Plano de Estudos✎</h1>
 
       <form onSubmit={adicionarTarefa}>
         <input 
@@ -30,7 +30,7 @@ function App() {
           value={inputTarefa}
           onChange={(e) => setInputTarefa(e.target.value)} 
         />
-        <button type="submit">𝐀𝐝𝐢𝐜𝐢𝐨𝐧𝐚𝐫</button>
+        <button type="submit">Adicionar</button>
       </form>
 
       <ul>

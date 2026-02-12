@@ -1,6 +1,7 @@
+
 :root {
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
+  line-height: 2;
   font-weight: 400;
 
   color-scheme: light dark;
@@ -39,8 +40,11 @@ body {
 }
 
 h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+  font-family:'Patrick Hand', cursive;
+  font-size:30px;
+  color:#000000;
+  padding-top: 13px;
+  margin-bottom: 19px;
 }
 
 button {
@@ -56,7 +60,7 @@ button {
   
 }
 button:hover {
-  border-color: #646cff;
+  border-color: #bebecf;
 }
 button:focus,
 button:focus-visible {
